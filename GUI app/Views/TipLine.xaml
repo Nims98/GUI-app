@@ -5,8 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI_app.Views"
         mc:Ignorable="d"
-        Title="TipLine" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        WindowStyle="SingleBorderWindow"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        Title="E - Police" Height="700" Width="1000">
+    <Border Background="#151720" CornerRadius="10">
+        <StackPanel>
+
+            <Grid Height="680">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Polygon Points="700,0 1000,0 1000,700 405,700 " Stroke="White" Fill="White" Grid.RowSpan="5" Margin="0,0,0,2" />
+                <Polygon Points="725,0 1000,0 1000,700 430,700 " Stroke="LightGray" Fill="WhiteSmoke" Grid.RowSpan="5" Margin="0,0,0,2" />
+                <StackPanel Orientation="Horizontal" Grid.Row="0" >
+                    <Image Source="pack://application:,,,/Images/anonymous.png" Width="50" Margin="20,10,20,10"/>
+                    <Label FontSize="48" FontWeight="Bold" Height="70"  FontFamily="Dungeon"  Content="Tip Line" VerticalAlignment="Center" Foreground="WhiteSmoke" />
+                </StackPanel>
+                <Label Grid.Row="1"  FontSize="15" Margin="20 0 0 0" FontFamily="Segoe UI"  Content="Describe the information as much as possible. Don't leave your personal information" VerticalAlignment="Top" Foreground="WhiteSmoke" />
+                <Border Grid.Row="2" Margin="20 0 20 0" Background="GhostWhite" CornerRadius="10">
+                    <StackPanel>
+                        
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </StackPanel>
+    </Border>
+
 </Window>
