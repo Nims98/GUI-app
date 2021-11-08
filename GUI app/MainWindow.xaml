@@ -5,46 +5,57 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI_app"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="900">
-    <StackPanel>
-        <Grid Height="582">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="27*"/>
-                <ColumnDefinition Width="46*"/>
-                <ColumnDefinition Width="27*"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="43"/>
-                <RowDefinition Height="72"/>
-                <RowDefinition Height="229*"/>
-                <RowDefinition Height="43*"/>
-                <RowDefinition Height="20*"/>
-                <RowDefinition Height="20*"/>
-                <RowDefinition Height="64*"/>
-                <RowDefinition Height="35*"/>
-                <RowDefinition Height="56*"/>
-            </Grid.RowDefinitions>
-            <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center">
-                <Label FontSize="48" FontWeight="Bold" Height="80" Width="70" FontFamily="Comic Sans MS"  Content="E-" VerticalAlignment="Center" />
-                <Image Source="pack://application:,,,/Images/police.png" Width="250" />
-            </StackPanel>
-            <Image Source="pack://application:,,,/Images/Police_logo.png" Grid.Column="1" Grid.Row="2"  Height="200"/>
-            <Label Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" FontWeight="Bold"  Width="140" FontFamily="Arial" Height="44"  >Welcome</Label>
-            <Label Grid.Column="1" Grid.Row="4" VerticalAlignment="Center" FontSize="12" Height="26" FontFamily="Arial" Margin="132,0,132,0" >Police Station - Ratnapura</Label>
-            <Label Grid.Column="1" Grid.Row="5" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="12" Height="26" Width="150" FontFamily="Arial" Margin="0,0,132,0" >Telephone - 0452 222 222</Label>
-            <StackPanel Orientation="Horizontal" Grid.Row="7" Grid.Column="1" HorizontalAlignment="Center" Width="400">
-                <Grid Width="400">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <Button Grid.Column="0"  Margin="0,2,0,2" FontSize="14" HorizontalAlignment="Left" Width="113" >Log In</Button>
-                    <Button Grid.Column="1" Grid.Row="7"  Margin="10 2 10 2" FontSize="14">Complain</Button>
-                    <Button Grid.Column="2" Grid.Row="7"  Margin="20 2 0 2" FontSize="14">Tip Line</Button>
-                </Grid>
-            </StackPanel>
-        </Grid>
-    </StackPanel>
+        WindowStyle="SingleBorderWindow"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        
 
+        Title="E - Police" Height="700" Width="1000">
+    <Border Background="#151720" CornerRadius="10">
+
+        <StackPanel>
+            <Grid Height="682" Width="989">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="284*"/>
+                    <ColumnDefinition Width="421*"/>
+                    <ColumnDefinition Width="284*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="54"/>
+                    <RowDefinition Height="72"/>
+                    <RowDefinition Height="287*"/>
+                    <RowDefinition Height="40*"/>
+                    <RowDefinition Height="27*"/>
+                    <RowDefinition Height="22*"/>
+                    <RowDefinition Height="22*"/>
+                    <RowDefinition Height="58*"/>
+                    <RowDefinition Height="40*"/>
+                    <RowDefinition Height="60*"/>
+                </Grid.RowDefinitions>
+                <Polygon Points="0,0 50,0 280,685 0,685 " Stroke="White" Fill="WhiteSmoke"  Grid.RowSpan="10" />
+                <Polygon Points="930,0 1000,0 1000,680 705,680 " Stroke="White" Fill="WhiteSmoke"  Grid.ColumnSpan="3" Grid.RowSpan="10" ></Polygon>
+                <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Width="310">
+                    <Label FontSize="48" FontWeight="Bold" Height="70" Width="60" FontFamily="Dungeon"  Content="E-" VerticalAlignment="Center" Foreground="WhiteSmoke" />
+                    <Image Source="pack://application:,,,/Images/police.png" Width="250" />
+                </StackPanel>
+                <Image Source="pack://application:,,,/Images/Police_logo.png" Grid.Row="2" Grid.ColumnSpan="3" Margin="0,24,0,23" />
+                <Label Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" FontWeight="Bold"  Width="130" FontFamily="Bahnschrift SemiBold" Height="44" Foreground="WhiteSmoke" >Welcome</Label>
+                <Label Grid.Column="1" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" Height="26" FontFamily="Arial" Width="152"  Foreground="WhiteSmoke" >Police Station - Ratnapura</Label>
+                <Label Grid.Column="1" Grid.Row="6" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" Height="26" Width="150" FontFamily="Arial" Foreground="WhiteSmoke">Telephone - 0452 222 222</Label>
+                <StackPanel Orientation="Horizontal" Grid.Row="8" Grid.Column="1" HorizontalAlignment="Center" Width="400" Margin="0,0,0,8">
+                    <Grid Width="400">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Button x:Name="login_button" Grid.Column="0"  Margin="0,0,20,2" FontSize="16"  Foreground="White" ContentControl.Content="Log In"/>
+                        <Button x:Name="complain_button" Grid.Column="1" Grid.Row="7"  Margin="10 0 10 2" FontSize="16" Foreground="White" Content="Complain"/>
+                        <Button x:Name="tipline_button" Grid.Column="2" Grid.Row="7"  Margin="20 0 0 2" FontSize="16" Foreground="White" Content="Tip Line"/>
+                    </Grid>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+
+    </Border>
 </Window>

@@ -4,21 +4,69 @@
              xmlns:local="clr-namespace:GUI_app"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
+       
         <Style TargetType="Button">
-            <Setter Property="Background" Value="DodgerBlue"/>
+
+            <Setter Property="Background" Value="#43a047"/>
             <Setter Property="Foreground" Value="White"/>
             
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <Border CornerRadius="5" Background="{TemplateBinding Background}" >
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <ControlTemplate.Resources>
+                            <!-- <=================== -->
+                            <Storyboard x:Key="MouseOverAnimation" Storyboard.TargetProperty="Color">
+                                <ColorAnimation Storyboard.TargetName="clrbrush" To="#00c853" Duration="0:0:0.3" />
+                            </Storyboard>
+                            <!-- <=================== -->
+                            <Storyboard x:Key="MouseOutAnimation" Storyboard.TargetProperty="Color" FillBehavior="Stop">
+                                <ColorAnimation Storyboard.TargetName="clrbrush" To="#43a047" Duration="0:0:0.1" />
+                            </Storyboard>
+                            <!-- <=================== -->
+                            <Storyboard x:Key="MouseDownAnimation" Storyboard.TargetProperty="Color">
+                                <ColorAnimation Storyboard.TargetName="clrbrush" To="#388e3c" Duration="0:0:0.1" />
+                            </Storyboard>
+                            <!-- <=================== -->
+                            <Storyboard x:Key="MouseUpAnimation" Storyboard.TargetProperty="Color" FillBehavior="Stop">
+                                <ColorAnimation Storyboard.TargetName="clrbrush" To="#43a047" Duration="0:0:0.1" />
+                            </Storyboard>
+                            <!-- <=================== -->
+                        </ControlTemplate.Resources>
+                        <Border x:Name="ButtonBorder" CornerRadius="5"  >
+                            <Border.Background>
+                                <SolidColorBrush x:Name="clrbrush" Color="#43a047"></SolidColorBrush>
+                            </Border.Background>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"  Content="{TemplateBinding Content}">
 
                             </ContentPresenter>
                         </Border>
+                      <!--  <Border CornerRadius="5" Background="{TemplateBinding Background}" >
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                            </ContentPresenter>
+                        </Border> -->
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard Storyboard="{StaticResource MouseOverAnimation}" />
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard Storyboard="{StaticResource MouseOutAnimation}" />
+                                </Trigger.ExitActions>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard Storyboard="{StaticResource MouseDownAnimation}" />
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard Storyboard="{StaticResource MouseUpAnimation}" />
+                                </Trigger.ExitActions>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
+           
         </Style>
     </Application.Resources>
 </Application>
