@@ -15,18 +15,13 @@ using System.Windows.Shapes;
 namespace GUI_app.Views
 {
     /// <summary>
-    /// Interaction logic for TipLine.xaml
+    /// Interaction logic for Complain.xaml
     /// </summary>
-    public partial class TipLine : Window
+    public partial class Complain : Window
     {
-        public TipLine()
+        public Complain()
         {
             InitializeComponent();
-        }
-
-        private void TextBox_TextChanged()
-        {
-
         }
     }
 }

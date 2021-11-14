@@ -24,5 +24,10 @@ namespace GUI_app
         {
             InitializeComponent();
         }
+
+        private void tipline_button_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }

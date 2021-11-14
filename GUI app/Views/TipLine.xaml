@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI_app.Views"
         mc:Ignorable="d"
-        WindowStyle="SingleBorderWindow"
+        WindowStyle="None"
         ResizeMode="NoResize"
         Background="Transparent"
         Title="E - Police" Height="700" Width="1000">
     <Border Background="#151720" CornerRadius="10">
         <StackPanel>
 
-            <Grid Height="680">
+            <Grid Height="700">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="2*"/>
                     <RowDefinition Height="*"/>
@@ -20,18 +20,30 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <Polygon Points="700,0 1000,0 1000,700 405,700 " Stroke="White" Fill="White" Grid.RowSpan="5" Margin="0,0,0,2" />
-                <Polygon Points="725,0 1000,0 1000,700 430,700 " Stroke="LightGray" Fill="WhiteSmoke" Grid.RowSpan="5" Margin="0,0,0,2" />
+                <Polygon Points="725,0 1000,0 1000,700 430,700 " Fill="#BF002B" Grid.RowSpan="5" Margin="0,0,0,2" />
                 <StackPanel Orientation="Horizontal" Grid.Row="0" >
-                    <Image Source="pack://application:,,,/Images/anonymous.png" Width="50" Margin="20,10,20,10"/>
+                    <Image  Source="pack://application:,,,/Images/Anonymous.png" Width="50" Margin="20,10,20,10"/>
                     <Label FontSize="48" FontWeight="Bold" Height="70"  FontFamily="Dungeon"  Content="Tip Line" VerticalAlignment="Center" Foreground="WhiteSmoke" />
                 </StackPanel>
                 <Label Grid.Row="1"  FontSize="15" Margin="20 0 0 0" FontFamily="Segoe UI"  Content="Describe the information as much as possible. Don't leave your personal information" VerticalAlignment="Top" Foreground="WhiteSmoke" />
                 <Border Grid.Row="2" Margin="20 0 20 0" Background="GhostWhite" CornerRadius="10">
                     <StackPanel>
-                        
+                        <TextBox Margin="15 15 15 15" Height="435" BorderBrush="LightGray"  > </TextBox>
                     </StackPanel>
                 </Border>
+                <Label Grid.Row="3"  FontSize="15" Margin="20 0 0 0" FontFamily="Segoe UI"  Content="True information not only reduce crimes, but also save police resources.True information not only reduce crimes, but also save police resources." VerticalAlignment="Top" Foreground="WhiteSmoke" />
+                <StackPanel Grid.Row="4">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                <Button x:Name="back_button" Grid.Column="0" Background="White" Margin="20 0 0 10" Height="25" Width="60" FontSize="14" HorizontalAlignment="Left" Foreground="Black" ContentControl.Content="Back"/>
+                        <Button x:Name="submit_button" Grid.Column="1" Margin="20 0 20 10" Height="25" Width="70" FontSize="14" HorizontalAlignment="Right" Foreground="White" ContentControl.Content="Submit"/>
+
+                    </Grid>
+                </StackPanel>
+
             </Grid>
         </StackPanel>
     </Border>

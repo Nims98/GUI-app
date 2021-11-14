@@ -51,7 +51,7 @@
                         </Grid.ColumnDefinitions>
                         <Button x:Name="login_button" Grid.Column="0"  Margin="0,0,20,2" FontSize="16"  Foreground="White" ContentControl.Content="Log In"/>
                         <Button x:Name="complain_button" Grid.Column="1" Grid.Row="7"  Margin="10 0 10 2" FontSize="16" Foreground="White" Content="Complain"/>
-                        <Button x:Name="tipline_button" Grid.Column="2" Grid.Row="7"  Margin="20 0 0 2" FontSize="16" Foreground="White" Content="Tip Line"/>
+                        <Button x:Name="tipline_button" Grid.Column="2"  Margin="20,0,0,2" FontSize="16" Foreground="White" Content="Tip Line" HorizontalAlignment="Left" Width="113"/>
                     </Grid>
                 </StackPanel>
             </Grid>
