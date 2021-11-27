@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Input;
 
 namespace GUI_app
 {
@@ -13,5 +14,17 @@ namespace GUI_app
     /// </summary>
     public partial class App : Application
     {
+        private void DragWindow(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
+        }
+
+        private void DragMove()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

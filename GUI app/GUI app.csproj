@@ -11,10 +11,15 @@
     <None Remove="Images\anonymous.png" />
     <None Remove="Images\armory.png" />
     <None Remove="Images\close.png" />
+    <None Remove="Images\minimize.png" />
     <None Remove="Images\notepad.png" />
     <None Remove="Images\police.png" />
     <None Remove="Images\police_logo.png" />
     <None Remove="Images\profile.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
   </ItemGroup>
 
   <ItemGroup>
@@ -25,6 +30,9 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\close.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\minimize.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\notepad.png">

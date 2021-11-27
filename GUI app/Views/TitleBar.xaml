@@ -6,13 +6,16 @@
              xmlns:local="clr-namespace:GUI_app.Views"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="1000">
-    <Grid Height="30">
-        <Border Height="30" Background="Transparent" VerticalAlignment="Top">
-            <Button Background="Transparent" HorizontalAlignment="Right" VerticalAlignment="Top" Foreground="Black" Width="20" Click="Button_Click" Margin="0 14 10 0">
-
-                <Image  Source="pack://application:,,,/Images/close.png"  VerticalAlignment="Top" Width="25" HorizontalAlignment="Left" />
-
+    <Grid Height="100">
+        <Border Height="100" Background="Transparent" VerticalAlignment="Top">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Style="{StaticResource closeBtn}"  HorizontalAlignment="Right" VerticalAlignment="Top" Foreground="White" Width="25" Height="25" Click="MinimizeWindow" Margin="0 5 5 0">
+                <Image  Source="pack://application:,,,/Images/minimize.png"  VerticalAlignment="Top" Height="15" HorizontalAlignment="Center" />
             </Button>
+                <Button Style="{StaticResource closeBtn}"  HorizontalAlignment="Right" VerticalAlignment="Top" Foreground="White" Width="25" Height="25" Click="CloseWindow" Margin="0 5 5 0">
+                    <Image  Source="pack://application:,,,/Images/close.png"  VerticalAlignment="Top" Height="15" HorizontalAlignment="Center" />
+                </Button>
+            </StackPanel>
         </Border>
     </Grid>
 </UserControl>

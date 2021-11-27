@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GUI_app.Database;
+using GUI_app.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,9 +24,23 @@ namespace GUI_app.Views
         public Dashboard()
         {
             InitializeComponent();
+            using (DatabaseRepository repository = new DatabaseRepository())
+            {
+                Officer off1 = new Officer()
+                {
+                    Name = "example",
+                    Policeid = "hh124234u",
+                    NIC = "2734872134892",
+                    Address = "naskjd",
+                    Mobile = 27348924,
+                    HomePhone = 32674634,
+                    PoliceDivision = "jjhabsdas"
+                };
+                
+            }
         }
 
-        private void TitleBar_MouseDown(object sender, MouseButtonEventArgs e)
+        private void DragWindow(object sender, MouseButtonEventArgs e)
         {
             if(e.LeftButton == MouseButtonState.Pressed)
             {

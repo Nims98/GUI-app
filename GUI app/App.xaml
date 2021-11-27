@@ -127,21 +127,92 @@
                             </Storyboard>
                             <!-- <=================== -->
                             <Storyboard x:Key="MouseDownAnimation" >
-                                <ColorAnimation Storyboard.TargetName="ButtonBorder" Storyboard.TargetProperty="Background.Color" To="#388e3c" Duration="0:0:0.1" />
+                                <DoubleAnimation Storyboard.TargetName="ButtonBorder" Storyboard.TargetProperty="Height" To="100" Duration="0:0:0.1" />
+                                <DoubleAnimation Storyboard.TargetName="ButtonBorder" Storyboard.TargetProperty="Width" To="100" Duration="0:0:0.1" />
+                                <ColorAnimation Storyboard.TargetName="ButtonBorder" Storyboard.TargetProperty="Background.Color" To="Black" Duration="0:0:0.1" />
                             </Storyboard>
                             <!-- <=================== -->
                             <Storyboard x:Key="MouseUpAnimation"  FillBehavior="Stop">
-                                <ColorAnimation Storyboard.TargetName="ButtonBorder" Storyboard.TargetProperty="Background.Color" To="#43a047" Duration="0:0:0.1" />
+                                <DoubleAnimation Storyboard.TargetName="ButtonBorder" Storyboard.TargetProperty="Height" To="110" Duration="0:0:0.15" />
+                                <DoubleAnimation Storyboard.TargetName="ButtonBorder" Storyboard.TargetProperty="Width" To="110" Duration="0:0:0.15" />
+                                <ColorAnimation Storyboard.TargetName="ButtonBorder" Storyboard.TargetProperty="Background.Color" To="#00c853" Duration="0:0:0.1" />
                             </Storyboard>
                             <!-- <=================== -->
                         </ControlTemplate.Resources>
                         <Border x:Name="ButtonBorder" CornerRadius="5"  Background="{TemplateBinding Background}" Width="100" Height="100">
+                            <Border.Effect>
+                                <DropShadowEffect BlurRadius="20"  Opacity="0.3"/>
+                            </Border.Effect>
+                            
                             <Grid>
                                 <ContentPresenter x:Name="ButtonContent" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center"  Content="{TemplateBinding Content}">
                             </ContentPresenter>
                             </Grid>
                         </Border>
                        
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard Storyboard="{StaticResource MouseOverAnimation}" />
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard Storyboard="{StaticResource MouseOutAnimation}" />
+                                </Trigger.ExitActions>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard Storyboard="{StaticResource MouseDownAnimation}" />
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard Storyboard="{StaticResource MouseUpAnimation}" />
+                                </Trigger.ExitActions>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="Button" x:Key="closeBtn">
+            <Setter Property="Background" Value="white"/>
+            <Setter Property="Foreground" Value="White"/>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <ControlTemplate.Resources>
+                            <!-- <=================== -->
+                            <Storyboard x:Key="MouseOverAnimation" >
+                                <ColorAnimation Storyboard.TargetName="ButtonBorder" Storyboard.TargetProperty="Background.Color" To="White" Duration="0:0:0.2" />
+                            </Storyboard>
+                            <!-- <=================== -->
+                            <Storyboard x:Key="MouseOutAnimation"  FillBehavior="Stop">
+                                <ColorAnimation Storyboard.TargetName="ButtonBorder" Storyboard.TargetProperty="Background.Color" To="White" Duration="0:0:0.1" />
+                            </Storyboard>
+                            <!-- <=================== -->
+                            <Storyboard x:Key="MouseDownAnimation" >
+                                <ColorAnimation Storyboard.TargetName="ButtonBorder" Storyboard.TargetProperty="Background.Color" To="LightGray" Duration="0:0:0.1" />
+                            </Storyboard>
+                            <!-- <=================== -->
+                            <Storyboard x:Key="MouseUpAnimation"  FillBehavior="Stop">
+                                <ColorAnimation Storyboard.TargetName="ButtonBorder" Storyboard.TargetProperty="Background.Color" To="white" Duration="0:0:0.1" />
+                            </Storyboard>
+                            <!-- <=================== -->
+                        </ControlTemplate.Resources>
+                        <Border x:Name="ButtonBorder" CornerRadius="3"  Background="{TemplateBinding Background}">
+
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"  Content="{TemplateBinding Content}">
+
+                            </ContentPresenter>
+                        </Border>
+                        <!--  <Border CornerRadius="5" Background="{TemplateBinding Background}" >
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                          <Border.Background >
+                                <SolidColorBrush x:Name="clrbrush" Color="#43a047"></SolidColorBrush>
+                            </Border.Background> 
+                        
+                            </ContentPresenter>
+                        </Border> -->
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
                                 <Trigger.EnterActions>

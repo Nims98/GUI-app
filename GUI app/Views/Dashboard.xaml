@@ -10,8 +10,11 @@
         FontFamily="Calibri"
         ResizeMode="NoResize"
         Background="Transparent"
+        MouseDown="DragWindow"
         Title="E - Police" Height="700" Width="1000">
-    <Border Background="#151720" CornerRadius="10">
+    
+        <Border Background="#151720" CornerRadius="10">
+       
         <StackPanel>
             <Grid Height="700">
                 <Grid.RowDefinitions>
@@ -19,7 +22,7 @@
                     <RowDefinition Height="680"/>
                 </Grid.RowDefinitions>
             <Polygon Points="725,0 1000,0 1000,700 430,700 " Fill="#BF002B" Grid.RowSpan="9"  />
-                <local:TitleBar Grid.Row="0" MouseDown="TitleBar_MouseDown"></local:TitleBar>
+                <local:TitleBar Grid.Row="0" ></local:TitleBar>
             <Grid Height="680" Grid.Row="1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="110"/>
@@ -34,7 +37,7 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Image  Source="pack://application:,,,/Images/Armory.png" Width="70" Height="70" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20,10,20,10"/>
-                    <Label Grid.Column="1" HorizontalAlignment="Left" FontSize="48" FontWeight="Bold" Height="70"  FontFamily="Dungeon"  Content="Armory" VerticalAlignment="Top" Foreground="WhiteSmoke" />
+                    <Label Grid.Column="1" HorizontalAlignment="Left" FontSize="48" FontWeight="Bold" Height="70"  FontFamily="Dungeon"  Content="Dashboard" VerticalAlignment="Top" Foreground="WhiteSmoke" />
                     <StackPanel Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="OFFICER Mr. " Foreground="white"></TextBlock>
@@ -57,59 +60,51 @@
                         <RowDefinition Height="2*"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <Border Grid.Row="0" Grid.Column="0" Width="120" Height="120" Background="White" Opacity="0.5">
-                    </Border>
+                    
                     <Button Grid.Row="0" Grid.Column="0" Style="{StaticResource ImgButton}"   Background="#FFA500" >
-                        <Image  Source="pack://application:,,,/Images/Armory.png" Width="100" Height="80" />
+                        <Image  Source="pack://application:,,,/Images/Armory.png" Width="auto" Margin="10" />
                     </Button>
                     <TextBlock Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Top" Text="Profile" Foreground="White"/>
 
-                    <Border Grid.Row="0" Grid.Column="1" Width="120" Height="120" Background="White" Opacity="0.5">
-                    </Border>
+                    
                     <Button Grid.Row="0" Grid.Column="1" Style="{StaticResource ImgButton}"   Background="#FFA500" >
-                        <Image  Source="pack://application:,,,/Images/Armory.png" Width="100" Height="80" />
+                            <Image  Source="pack://application:,,,/Images/Armory.png" Width="auto" Margin="10" />
                     </Button>
                     <TextBlock Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" Text="Armory" Foreground="White"/>
 
-                    <Border Grid.Row="0" Grid.Column="2" Width="120" Height="120" Background="White" Opacity="0.5">
-                    </Border>
+                   
                     <Button Grid.Row="0" Grid.Column="2" Style="{StaticResource ImgButton}"   Background="#FFA500" >
-                        <Image  Source="pack://application:,,,/Images/Armory.png" Width="100" Height="80" />
+                            <Image  Source="pack://application:,,,/Images/Armory.png" Width="auto" Margin="10" />
                     </Button>
                     <TextBlock Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Top" Text="Appointments" Foreground="White"/>
 
-                    <Border Grid.Row="0" Grid.Column="3" Width="120" Height="120" Background="White" Opacity="0.5">
-                    </Border>
+                    
                     <Button Grid.Row="0" Grid.Column="3" Style="{StaticResource ImgButton}"   Background="#FFA500" >
-                        <Image  Source="pack://application:,,,/Images/Armory.png" Width="100" Height="80" />
+                            <Image  Source="pack://application:,,,/Images/Armory.png" Width="auto" Margin="10" />
                     </Button>
                     <TextBlock Grid.Row="1" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Top" Text="Tip Line" Foreground="White"/>
 
-                    <Border Grid.Row="2" Grid.Column="0" Width="120" Height="120" Background="White" Opacity="0.5">
-                    </Border>
+                    
                     <Button Grid.Row="2" Grid.Column="0" Style="{StaticResource ImgButton}"   Background="#FFA500" >
-                        <Image  Source="pack://application:,,,/Images/Armory.png" Width="100" Height="80" />
+                            <Image  Source="pack://application:,,,/Images/Armory.png" Width="auto" Margin="10" />
                     </Button>
                     <TextBlock Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Top" Text="Reminders" Foreground="White"/>
 
-                    <Border Grid.Row="2" Grid.Column="1" Width="120" Height="120" Background="White" Opacity="0.5">
-                    </Border>
+                    
                     <Button Grid.Row="2" Grid.Column="1" Style="{StaticResource ImgButton}"   Background="#FFA500" >
-                        <Image  Source="pack://application:,,,/Images/Armory.png" Width="100" Height="80" />
+                            <Image  Source="pack://application:,,,/Images/Armory.png" Width="auto" Margin="10" />
                     </Button>
                     <TextBlock Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" Text="Prisoner Log" Foreground="White"/>
 
-                    <Border Grid.Row="2" Grid.Column="2" Width="120" Height="120" Background="White" Opacity="0.5">
-                    </Border>
+                    
                     <Button Grid.Row="2" Grid.Column="2" Style="{StaticResource ImgButton}"   Background="#FFA500" >
-                        <Image  Source="pack://application:,,,/Images/Armory.png" Width="100" Height="80" />
+                            <Image  Source="pack://application:,,,/Images/Armory.png" Width="auto" Margin="10" />
                     </Button>
                     <TextBlock Grid.Row="3" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Top" Text="Prisoner Log" Foreground="White"/>
 
-                    <Border Grid.Row="2" Grid.Column="3" Width="120" Height="120" Background="White" Opacity="0.5">
-                    </Border>
+                       
                     <Button Grid.Row="2" Grid.Column="3" Style="{StaticResource ImgButton}"   Background="#FFA500" >
-                        <Image  Source="pack://application:,,,/Images/Armory.png" Width="100" Height="80" />
+                            <Image  Source="pack://application:,,,/Images/Armory.png" Width="auto" Margin="10" />
                     </Button>
                     <TextBlock Grid.Row="3" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Top" Text="Settings" Foreground="White"/>
 

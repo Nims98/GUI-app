@@ -10,28 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace GUI_app.Views
 {
     /// <summary>
-    /// Interaction logic for TitleBar.xaml
+    /// Interaction logic for Profile.xaml
     /// </summary>
-    public partial class TitleBar : UserControl
+    public partial class Profile : Window
     {
-        public TitleBar()
+        public Profile()
         {
             InitializeComponent();
-        }
-
-        private void CloseWindow(object sender, RoutedEventArgs e)
-        {
-            Window.GetWindow(this).Close();
-        }
-        private void MinimizeWindow(object sender, RoutedEventArgs e)
-        {
-            Window.GetWindow(this).WindowState = WindowState.Minimized;
         }
     }
 }
