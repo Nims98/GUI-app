@@ -6,12 +6,13 @@
         xmlns:local="clr-namespace:GUI_app.Views"
         mc:Ignorable="d"
          WindowStyle="None"
+        MouseDown="DragWindow"
         FontSize="14"
         ResizeMode="NoResize"
         Background="Transparent"
         Title="E - Police" Height="700" Width="1000">
     <Border Background="#151720" CornerRadius="10">
-        <StackPanel Margin="20 20 0 0">
+        <StackPanel Margin="20 0 0 0">
             <Grid Height="700" >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="5*"/>
@@ -23,8 +24,10 @@
                     <RowDefinition Height="30"/>
                     <RowDefinition Height="65"/>
                 </Grid.RowDefinitions>
+
                 <Polygon Points="725,0 1000,0 1000,700 430,700 " Fill="#BF002B" Grid.RowSpan="9"  />
-                <StackPanel Grid.Row="0">
+                <local:TitleBar Grid.Row="0" ></local:TitleBar>
+                <StackPanel Grid.Row="0" Margin="0 10 0 0">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
@@ -44,7 +47,7 @@
                         <TextBlock Grid.Column="0" Text="Name" Foreground="White" VerticalAlignment="Center"/>
                         <TextBlock Grid.Column="0" Text=":" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 20 0"/>
 
-                        <TextBox Grid.Column="1" Width="790" Height="30" HorizontalAlignment="Left"></TextBox>
+                        <TextBox Name="name" Grid.Column="1" Width="790" Height="25" HorizontalAlignment="Left"></TextBox>
                     </Grid>
                 </StackPanel >
                 <StackPanel Grid.Row="2">
@@ -55,7 +58,7 @@
                         </Grid.ColumnDefinitions>
                         <TextBlock Grid.Column="0" Text="Address" Foreground="White" VerticalAlignment="Center"/>
                         <TextBlock Grid.Column="0" Text=":" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 20 0"/>
-                        <TextBox Grid.Column="1" Width="790" Height="30" HorizontalAlignment="Left"></TextBox>
+                        <TextBox Name="address" Grid.Column="1" Width="790" Height="25" HorizontalAlignment="Left"></TextBox>
 
                     </Grid>
                 </StackPanel>
@@ -67,10 +70,10 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="2*"/>
                         </Grid.ColumnDefinitions>
-                        <TextBox Grid.Column="1" Width="300" Height="30" HorizontalAlignment="Left"></TextBox>
+                        <TextBox Name="tele" Grid.Column="1" Width="300" Height="25" HorizontalAlignment="Left"></TextBox>
                         <TextBlock Grid.Column="0" Text=":" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 20 0"/>
                         <TextBlock Grid.Column="0" Text="Telephone" Foreground="White" VerticalAlignment="Center"/>
-                        <TextBox Grid.Column="3" Width="300" Height="30" HorizontalAlignment="Left"></TextBox>
+                        <TextBox Name="nic" Grid.Column="3" Width="300" Height="25" HorizontalAlignment="Left"></TextBox>
                         <TextBlock Grid.Column="2" Text=":" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 20 0"/>
                         <TextBlock Grid.Column="2" Text="NIC No" Foreground="White" VerticalAlignment="Center" Margin="80 0 0 0"/>
                     </Grid>
@@ -83,7 +86,7 @@
                         </Grid.ColumnDefinitions>
                         <TextBlock Grid.Column="0" Text="Police Division" Foreground="White" VerticalAlignment="Center"/>
                         <TextBlock Grid.Column="0" Text=":" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 20 0"/>
-                        <ComboBox Grid.Column="1" Width="790" HorizontalAlignment="Left"></ComboBox>
+                        <TextBox Name="policeDivision" Grid.Column="1" Width="790" HorizontalAlignment="Left"></TextBox>
                     </Grid>
                 </StackPanel>
                 <StackPanel Grid.Row="5">
@@ -94,7 +97,7 @@
                         </Grid.ColumnDefinitions>
                         <TextBlock Grid.Column="0" Text="Complain" Foreground="White" VerticalAlignment="Top"/>
                         <TextBlock Grid.Column="0" Text=":" Foreground="White" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0 0 20 0"/>
-                        <TextBox Grid.Column="3" Width="790" Height="230" HorizontalAlignment="Left"></TextBox>
+                        <TextBox Name="complain" Grid.Column="3" Width="790" Height="230" HorizontalAlignment="Left"></TextBox>
                     </Grid>
                 </StackPanel>
                 <StackPanel Grid.Row="6">
@@ -103,7 +106,7 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="5*"/>
                         </Grid.ColumnDefinitions>
-                        <CheckBox Grid.Column="0" HorizontalAlignment="Right" Margin="0 0 20 0"/>
+                        <CheckBox Name="Agree" Grid.Column="0" HorizontalAlignment="Right" Margin="0 0 20 0"/>
                         <TextBlock Grid.Column="1" Foreground="White"  Text="All the information above are true and i'm aware of that filing a false complain is a felony."/>
                     </Grid>
                 </StackPanel>
@@ -113,8 +116,8 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Button x:Name="back_button" Grid.Column="0" Background="White" Margin="20 0 0 10" Height="25" Width="60" FontSize="14" HorizontalAlignment="Left" Foreground="Black" ContentControl.Content="Back"/>
-                        <Button x:Name="submit_button" Grid.Column="1" Margin="20 0 20 10" Height="25" Width="70" FontSize="14" HorizontalAlignment="Right" Foreground="White" ContentControl.Content="Submit"/>
+                        <Button x:Name="back_button" Grid.Column="0" Background="White" Margin="20 0 0 10" Height="25" Width="60" FontSize="14" HorizontalAlignment="Left" Foreground="Black" ContentControl.Content="Back" Click="back_button_Click"/>
+                        <Button x:Name="submit_button" Grid.Column="1" Margin="20 0 20 10" Height="25" Width="70" FontSize="14" HorizontalAlignment="Right" Foreground="White" ContentControl.Content="Submit" Click="submit_button_Click"/>
 
                     </Grid>
                 </StackPanel>

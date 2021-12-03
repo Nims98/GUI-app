@@ -8,9 +8,15 @@
          WindowStyle="None"
         FontSize="14"
         ResizeMode="NoResize"
+        MouseDown="DragWindow"
+        AllowsTransparency="True"
+       
         Background="Transparent"
         Title="E - Police" Height="700" Width="1000">
     <Border Background="#151720" CornerRadius="10">
+        <Border.Clip>
+            <RectangleGeometry RadiusX="8" RadiusY="8" Rect="0,0,1000,700"/>
+        </Border.Clip>
         <StackPanel>
             <Grid Height="700">
                 <Grid.RowDefinitions>
@@ -21,7 +27,9 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="2*"/>
                 </Grid.RowDefinitions>
-        <Polygon Points="725,0 1000,0 1000,700 430,700 " Fill="#BF002B" Grid.RowSpan="9"  />
+        <Polygon Points="725,0 1000,0 1000,700 430,700 " Fill="#BF002B" Grid.RowSpan="9" />
+                <local:TitleBar Grid.Row="0" ></local:TitleBar>
+
                 <StackPanel Orientation="Horizontal" Grid.Row="0">
                     <Image  Source="pack://application:,,,/Images/Armory.png" Width="70" Margin="20,10,20,10"/>
                     <Label Grid.Column="1" HorizontalAlignment="Left" FontSize="48" FontWeight="Bold" Height="70"  FontFamily="Dungeon"  Content="Armory" VerticalAlignment="Center" Foreground="WhiteSmoke" />
@@ -47,10 +55,10 @@
                         <TextBlock Grid.Column="0" Grid.Row="1" Text=":" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 20 0"/>
                         <TextBlock Grid.Column="0" Grid.Row="2" Text=":" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 20 0"/>
                         <TextBlock Grid.Column="0" Grid.Row="3" Text=":" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 20 0"/>
-                        <TextBox Grid.Column="1" Grid.Row="0" Width="300" Height="25" HorizontalAlignment="Left"></TextBox>
-                        <TextBox Grid.Column="1" Grid.Row="1" Width="300" Height="25" HorizontalAlignment="Left"></TextBox>
-                        <DatePicker Grid.Column="1" Grid.Row="2" Width="300" Height="25" HorizontalAlignment="Left" Foreground="Black"></DatePicker>
-                        <DatePicker Grid.Column="1" Grid.Row="3" Width="300" Height="25" HorizontalAlignment="Left"></DatePicker>
+                        <TextBox Name="Model" Grid.Column="1" Grid.Row="0" Width="300" Height="25" HorizontalAlignment="Left"></TextBox>
+                        <TextBox Name="SerialNo" Grid.Column="1" Grid.Row="1" Width="300" Height="25" HorizontalAlignment="Left"></TextBox>
+                        <DatePicker Name="Lastused" Grid.Column="1" Grid.Row="2" Width="300" Height="25" HorizontalAlignment="Left" ></DatePicker>
+                        <DatePicker Name="Lastserviced" Grid.Column="1" Grid.Row="3" Width="300" Height="25" HorizontalAlignment="Left"></DatePicker>
                         <Border Grid.Column="2" Grid.RowSpan="4" Height="200" Width="200" Background="WhiteSmoke"></Border>
                     </Grid>
                 </StackPanel>
@@ -68,9 +76,9 @@
                         </Grid.RowDefinitions>
                         <TextBlock Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Margin="0 10 0 10" Text="Bullets" Foreground="White" VerticalAlignment="Center"/>
                         <TextBlock Grid.Column="0" Grid.Row="0" Text=":" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 20 0"/>
-                        <TextBox Grid.Column="1" Grid.Row="0" Width="230" Height="25" HorizontalAlignment="Left"></TextBox>
-                        <TextBox Grid.Column="2" Grid.Row="0" Width="230" Height="25" HorizontalAlignment="Left"></TextBox>
-                        <TextBox Grid.Column="3" Grid.Row="0" Width="230" Height="25" HorizontalAlignment="Left"></TextBox>
+                        <TextBox Name="Newbullets" Grid.Column="1" Grid.Row="0" Width="230" Height="25" HorizontalAlignment="Left"></TextBox>
+                        <TextBox Name="Firedbullets" Grid.Column="2" Grid.Row="0" Width="230" Height="25" HorizontalAlignment="Left"></TextBox>
+                        <TextBox Name="Balancebullets" Grid.Column="3" Grid.Row="0" Width="230" Height="25" HorizontalAlignment="Left"></TextBox>
                         <TextBlock Grid.Column="1" Grid.Row="1" Text="Newly Issued Today" FontSize="12" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 5 0 0"/>
                         <TextBlock Grid.Column="2" Grid.Row="1" Text="Fired Today" FontSize="12" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 5 0 0"/>
                         <TextBlock Grid.Column="3" Grid.Row="1" Text="Balance" FontSize="12" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 5 0 0"/>
@@ -83,7 +91,7 @@
                     </Grid.ColumnDefinitions>
                     <TextBlock Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Margin="0 10 0 10" Text="Notes" Foreground="White" VerticalAlignment="Top"/>
                     <TextBlock Grid.Column="0" Grid.Row="0" Text=":" Foreground="White" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0 0 20 0"/>
-                    <TextBox Grid.Column="1" Grid.Row="0" Width="500" Height="150" HorizontalAlignment="Left"></TextBox>
+                    <TextBox Name="notes" Grid.Column="1" Grid.Row="0" Width="500" Height="150" HorizontalAlignment="Left"></TextBox>
                 </Grid>
                 <TextBlock Grid.Row="4" Text="By clicking Update, you will add a new entry to data log of your service weapon" Foreground="White" HorizontalAlignment="Center" />
                 <Grid Grid.Row="5">
@@ -92,9 +100,9 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Button  Grid.Column="0" Content="Back" Width="60" Height="28"/>
-                    <Button  Grid.Column="1" Content="View data log" Width="110" Height="28"/>
-                    <Button  Grid.Column="2" Content="Update" Width="70" Height="28"/>
+                    <Button Name="BackBtn" Grid.Column="0" Content="Back" Width="60" Height="28" Click="Back_Btn"/>
+                    <Button Name="ViewDataLog" Grid.Column="1" Content="View data log" Width="110" Height="28"/>
+                    <Button Name="UpdateBtn" Grid.Column="2" Content="Update" Width="70" Height="28" Click="Update_Btn"/>
                 </Grid>
             </Grid>
         </StackPanel>

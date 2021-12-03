@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace GUI_app.Views
 {
     /// <summary>
-    /// Interaction logic for Profile.xaml
+    /// Interaction logic for CustomMsgBox.xaml
     /// </summary>
-    public partial class Profile : Window
+    public partial class CustomMsgBox : Window
     {
-        public Profile()
+        public CustomMsgBox()
         {
             InitializeComponent();
         }
@@ -31,11 +31,9 @@ namespace GUI_app.Views
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void msgBtn_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
-            Dashboard dashwin = new Dashboard();
-            dashwin.Show();
         }
     }
 }

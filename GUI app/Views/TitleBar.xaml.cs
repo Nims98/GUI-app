@@ -27,7 +27,8 @@ namespace GUI_app.Views
 
         private void CloseWindow(object sender, RoutedEventArgs e)
         {
-            Window.GetWindow(this).Close();
+            
+            Application.Current.Shutdown();
         }
         private void MinimizeWindow(object sender, RoutedEventArgs e)
         {

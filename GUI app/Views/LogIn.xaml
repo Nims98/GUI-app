@@ -6,9 +6,12 @@
         xmlns:local="clr-namespace:GUI_app.Views"
         mc:Ignorable="d"
         FontSize="14"
+        WindowStyle="None"
+        MouseDown="DragWindow"
         FontFamily="Calibri"
         ResizeMode="NoResize"
         Background="Transparent"
+        AllowsTransparency="True"
         Title="LogIn" Height="700" Width="500">
     <Border Background="#151720" CornerRadius="10">
         <Grid>
@@ -17,16 +20,16 @@
                 <RowDefinition Height="5*"/>
                 <RowDefinition Height="6*"/>
             </Grid.RowDefinitions>
-        <Polygon Points="550,0 400,0 100,700 550,700 " Fill="#BF002B" Grid.RowSpan="9"  />
+            <Polygon Points="550,0 400,0 100,700 550,700 " Fill="#BF002B" Grid.RowSpan="9"  />
             <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center">
                 <Label FontSize="48" FontWeight="Bold" Height="70" Width="60" FontFamily="Dungeon"  Content="E-" VerticalAlignment="Center" Foreground="WhiteSmoke" />
             <Image Source="pack://application:,,,/Images/police.png" Width="250" />
             </StackPanel>
             <Image Source="pack://application:,,,/Images/Police_logo.png" Grid.Row="1" Grid.ColumnSpan="3" Margin="0,24,0,23" />
-            <Border Grid.Row="2" CornerRadius="7" Margin="30 10 30 60" Background="White" Opacity="0.6" >
+            <Border Grid.Row="2" CornerRadius="7" Margin="30 10 30 70" Background="White" Opacity="0.6" >
                
             </Border>
-            <StackPanel Grid.Row="2" Margin="30 10 30 20" >
+            <StackPanel Grid.Row="2" Margin="30,10,30,12" >
                 <Grid Margin="30 30 30 30">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
@@ -35,14 +38,15 @@
                     </Grid.RowDefinitions>
                     <StackPanel Grid.Row="0"> 
                     <TextBlock >Police ID</TextBlock>
-                    <TextBox Margin="0 3 0 10"/>
+                    <TextBox Name="nicNo"  Margin="0 3 0 10" />
                     </StackPanel>
                     <StackPanel Grid.Row="1" Cursor="IBeam">
                         <TextBlock >Password</TextBlock>
-                        <PasswordBox Style="{StaticResource roundcornerpassword}" Margin="0 3 0 10"></PasswordBox>
+                        <PasswordBox Name="password" Style="{StaticResource roundcornerpassword}" Margin="0 3 0 10"></PasswordBox>
                     </StackPanel>
-                    <Button Grid.Row="2" Height="30" Margin="0 40 0 0" Content="Log In" ></Button>
+                    <Button Grid.Row="2" Height="30" Margin="0 30 0 0" Content="Log In" Click="Login_btn" ></Button>
                 </Grid>
+                <Button Content="Cancel" Height="25" Width="80" Margin="0 15 0 0" Click="Cancel_btn"/>
             </StackPanel>
         </Grid>
         </Border>

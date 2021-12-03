@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GUI_app.Database;
+using GUI_app.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,5 +25,72 @@ namespace GUI_app.Views
         {
             InitializeComponent();
         }
+        private void DragWindow(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
+        }
+
+        
+        private void Cancel_btn(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+
+        }
+
+        private void Login_btn(object sender, RoutedEventArgs e)
+        {
+
+            string NIC = nicNo.Text;
+            string PWD = password.Password;
+
+            using (DatabaseRepository repository = new DatabaseRepository())
+            {
+               
+                    Officer user = repository.Officers.Find(NIC);
+                if(user != null)
+                {
+                    if(user.Password == PWD)
+                    {
+                        Dashboard dashWindow = new Dashboard();
+                        dashWindow.Show();
+                        this.Close();
+                    }
+                    else
+                    {
+                        CustomMsgBox msgBx = new CustomMsgBox();
+                        msgBx.Message.Text = "Incorrect Password, Try Again !";
+                        msgBx.Show();
+                        nicNo.Clear();
+                        password.Clear();
+                    }
+                }
+                else { 
+                   
+                    CustomMsgBox msgBx = new CustomMsgBox();
+                    msgBx.Message.Text = "User does not exist";
+                    msgBx.Show();
+                    nicNo.Clear();
+                    password.Clear();
+                }
+                
+               
+               
+                
+                
+            
+
+            }
+
+
+           
+        }
+
+        
     }
 }

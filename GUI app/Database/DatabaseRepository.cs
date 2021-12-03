@@ -11,5 +11,8 @@ namespace GUI_app.Database
     class DatabaseRepository : DbContext
     {
         public DbSet<Officer> Officers { get; set; }
+        public DbSet<FireArm> FireArms { get; set; }
+        public DbSet<ComplainFile> ComplainFiles { get; set; }
+        public DbSet<TipModel> TipModels { get; set; }
     }
 }

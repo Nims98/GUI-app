@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GUI_app.Database;
+using GUI_app.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +24,42 @@ namespace GUI_app.Views
         public Armory()
         {
             InitializeComponent();
+            
         }
+        private void DragWindow(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
+        }
+
+        private void Back_Btn(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            Dashboard dashwin = new Dashboard();
+            dashwin.Show();
+        }
+
+        private void Update_Btn(object sender, RoutedEventArgs e)
+        {
+            using (DatabaseRepository repository = new DatabaseRepository())
+            {
+
+                FireArm gun = new FireArm()
+                {
+                    SerialNo = SerialNo.Text,
+                    Model = Model.Text,
+                   LastUsed=Lastused.DisplayDate,
+                   LastServiced=Lastserviced.DisplayDate,
+                    NewBullets = int.Parse(Newbullets.Text),
+                    FiredBullets = int.Parse(Firedbullets.Text),
+                    BalanceBullets = int.Parse(Balancebullets.Text),
+                    Notes = notes.Text
+                };
+                repository.FireArms.Add(gun);
+                repository.SaveChanges();
+            }
+            }
     }
 }

@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:GUI_app.Views"
         mc:Ignorable="d"
         WindowStyle="None"
+        MouseDown="DragWindow"
         ResizeMode="NoResize"
         Background="Transparent"
         Title="E - Police" Height="700" Width="1000">
@@ -21,16 +22,13 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Polygon Points="725,0 1000,0 1000,700 430,700 " Fill="#BF002B" Grid.RowSpan="5" Margin="0,0,0,2" />
+                <local:TitleBar Grid.Row="0" ></local:TitleBar>
                 <StackPanel Orientation="Horizontal" Grid.Row="0" >
                     <Image  Source="pack://application:,,,/Images/Anonymous.png" Width="50" Margin="20,10,20,10"/>
                     <Label FontSize="48" FontWeight="Bold" Height="70"  FontFamily="Dungeon"  Content="Tip Line" VerticalAlignment="Center" Foreground="WhiteSmoke" />
                 </StackPanel>
                 <Label Grid.Row="1"  FontSize="15" Margin="20 0 0 0" FontFamily="Segoe UI"  Content="Describe the information as much as possible. Don't leave your personal information" VerticalAlignment="Top" Foreground="WhiteSmoke" />
-                <Border Grid.Row="2" Margin="20 0 20 0" Background="GhostWhite" CornerRadius="10">
-                    <StackPanel>
-                        <TextBox Margin="15 15 15 15" Height="435" BorderBrush="LightGray"  > </TextBox>
-                    </StackPanel>
-                </Border>
+                <TextBox Name="tiptext"  AcceptsReturn="True" Grid.Row="2" Margin="40 15 40 15" Height="435"  TextWrapping="Wrap" VerticalAlignment="Top" FontSize="15"></TextBox>
                 <Label Grid.Row="3"  FontSize="15" Margin="20 0 0 0" FontFamily="Segoe UI"  Content="True information not only reduce crimes, but also save police resources.True information not only reduce crimes, but also save police resources." VerticalAlignment="Top" Foreground="WhiteSmoke" />
                 <StackPanel Grid.Row="4">
                     <Grid>
@@ -38,8 +36,8 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                <Button x:Name="back_button" Grid.Column="0" Background="White" Margin="20 0 0 10" Height="25" Width="60" FontSize="14" HorizontalAlignment="Left" Foreground="Black" ContentControl.Content="Back"/>
-                        <Button x:Name="submit_button" Grid.Column="1" Margin="20 0 20 10" Height="25" Width="70" FontSize="14" HorizontalAlignment="Right" Foreground="White" ContentControl.Content="Submit"/>
+                <Button x:Name="back_button" Grid.Column="0" Background="White" Margin="20 0 0 10" Height="25" Width="60" FontSize="14" HorizontalAlignment="Left" Foreground="Black" ContentControl.Content="Back" Click="back_button_Click"/>
+                        <Button x:Name="submit_button" Grid.Column="1" Margin="20 0 20 10" Height="25" Width="70" FontSize="14" HorizontalAlignment="Right" Foreground="White" ContentControl.Content="Submit" Click="submit_btn"/>
 
                     </Grid>
                 </StackPanel>

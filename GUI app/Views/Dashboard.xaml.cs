@@ -47,5 +47,19 @@ namespace GUI_app.Views
                 DragMove();
             }
         }
+
+        private void profile_btn(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            Profile profileWin = new Profile();
+            profileWin.Show();
+        }
+
+        private void armory_btn(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            Armory armoryWin = new Armory();
+            armoryWin.Show();
+        }
     }
 }

@@ -3,18 +3,22 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:GUI_app"
+        xmlns:local="clr-namespace:GUI_app" xmlns:local1="clr-namespace:GUI_app.Views"
         mc:Ignorable="d"
-        WindowStyle="SingleBorderWindow"
+        WindowStyle="None"
+        FontSize="14"
+        FontFamily="Calibri"
+        MouseDown="DragWindow"
         ResizeMode="NoResize"
         Background="Transparent"
-        
+        AllowsTransparency="True"
 
         Title="E - Police" Height="700" Width="1000">
     <Border Background="#151720" CornerRadius="10">
 
         <StackPanel>
-            <Grid Height="682" Width="989">
+
+            <Grid Height="700" Width="1000">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="284*"/>
                     <ColumnDefinition Width="421*"/>
@@ -32,8 +36,11 @@
                     <RowDefinition Height="40*"/>
                     <RowDefinition Height="60*"/>
                 </Grid.RowDefinitions>
-                <Polygon Points="0,0 50,0 280,685 0,685 " Stroke="White" Fill="WhiteSmoke"  Grid.RowSpan="10" />
-                <Polygon Points="930,0 1000,0 1000,680 705,680 " Stroke="White" Fill="WhiteSmoke"  Grid.ColumnSpan="3" Grid.RowSpan="10" ></Polygon>
+
+            <local1:TitleBar Grid.Row="0" ></local1:TitleBar>
+                <Polygon Points="0,0 50,0 280,700 0,700 " Stroke="White" Fill="WhiteSmoke"  Grid.RowSpan="10" />
+                <Polygon Points="930,0 1000,0 1000,700 705,700 " Stroke="White" Fill="WhiteSmoke"  Grid.ColumnSpan="3" Grid.RowSpan="10" ></Polygon>
+                <local1:TitleBar Grid.Row="0" Grid.Column="2" ></local1:TitleBar>
                 <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Width="310">
                     <Label FontSize="48" FontWeight="Bold" Height="70" Width="60" FontFamily="Dungeon"  Content="E-" VerticalAlignment="Center" Foreground="WhiteSmoke" />
                     <Image Source="pack://application:,,,/Images/police.png" Width="250" />
@@ -49,9 +56,9 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Button x:Name="login_button" Grid.Column="0"  Margin="0,0,20,2" FontSize="16"  Foreground="White" ContentControl.Content="Log In"/>
-                        <Button x:Name="complain_button" Grid.Column="1" Grid.Row="7"  Margin="10 0 10 2" FontSize="16" Foreground="White" Content="Complain"/>
-                        <Button x:Name="tipline_button" Grid.Column="2"  Margin="20,0,0,2" FontSize="16" Foreground="White" Content="Tip Line" HorizontalAlignment="Left" Width="113"/>
+                        <Button x:Name="login_button" Grid.Column="0"  Margin="0,0,20,2" FontSize="16"  Foreground="White" ContentControl.Content="Log In" Width="113" Height="31" Click="login_button_Click"/>
+                        <Button x:Name="complain_button" Grid.Column="1" Grid.Row="7"  Margin="10 0 10 2" FontSize="16" Foreground="White" Content="Complain" Width="113" Height="31" Click="complain_button_Click"/>
+                        <Button x:Name="tipline_button" Grid.Column="2"  Margin="20,0,0,2" FontSize="16" Foreground="White" Content="Tip Line" Height="31" Click="tipline_button_Click_1"/>
                     </Grid>
                 </StackPanel>
             </Grid>

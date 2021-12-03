@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GUI_app.Database;
+using GUI_app.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +24,48 @@ namespace GUI_app.Views
         public Complain()
         {
             InitializeComponent();
+        }
+        private void DragWindow(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
+        }
+        private void back_button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+        }
+
+        private void submit_button_Click(object sender, RoutedEventArgs e)
+        {
+            if (Agree.IsChecked != true)
+            {
+                CustomMsgBox msgBx = new CustomMsgBox();
+                msgBx.Message.Text = "Please check the given Conditions before Submit";
+                msgBx.Width = 400;
+                msgBx.Show();
+            }
+            else { 
+            using (DatabaseRepository repository = new DatabaseRepository())
+            {
+                ComplainFile Complain = new ComplainFile()
+                {
+                    Name = name.Text,
+                    Address = address.Text,
+                    Telephone = int.Parse(tele.Text),
+                    NIC = nic.Text,
+                    PoliceDivision = policeDivision.Text,
+                    ComplainText = complain.Text
+                };
+
+                repository.ComplainFiles.Add(Complain);
+                repository.SaveChanges();
+            }
+            }
         }
     }
 }
