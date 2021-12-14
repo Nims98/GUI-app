@@ -49,6 +49,17 @@ namespace GUI_app.Views
                 };
                 repository.Prisoners.Add(newprisoner);
                 repository.SaveChanges();
+
+                CustomMsgBox msgBx = new CustomMsgBox();
+                msgBx.Message.Text = "Prisoner added successfully";
+                msgBx.Show();
+                name.Clear();
+                address.Clear();
+                nic.Clear();
+                residance.Clear();
+                mobile.Clear();
+                crime.Clear();
+                moreinfo.Clear();
             }
         }
 

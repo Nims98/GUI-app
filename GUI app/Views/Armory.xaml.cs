@@ -62,6 +62,10 @@ namespace GUI_app.Views
                 };
                 
                 repository.SaveChanges();
+                CustomMsgBox msgBx = new CustomMsgBox();
+                msgBx.Message.Text = "Details have been updated";
+                msgBx.Show();
+               
             }
             }
 

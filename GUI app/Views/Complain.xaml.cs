@@ -64,7 +64,17 @@ namespace GUI_app.Views
 
                 repository.ComplainFiles.Add(Complain);
                 repository.SaveChanges();
-            }
+                    CustomMsgBox msgBx = new CustomMsgBox();
+                    msgBx.Message.Text = "Your complain has been submitted";
+                    msgBx.Width = 400;
+                    msgBx.Show();
+                    name.Clear();
+                    address.Clear();
+                    tele.Clear();
+                    nic.Clear();
+                    policeDivision.Clear();
+                    complain.Clear();
+                }
             }
         }
     }

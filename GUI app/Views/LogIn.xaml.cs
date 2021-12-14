@@ -57,12 +57,13 @@ namespace GUI_app.Views
             
                
                    Officer user = repository.Officers.Find(NIC);
-            currentUserID = user.NIC;
-            currentUserName = user.Name;
-            currentUserPoliceID = user.Policeid;
             if (user != null)
+          
                 {
-                    if(user.Password == PWD)
+                currentUserID = user.NIC;
+                currentUserName = user.Name;
+                currentUserPoliceID = user.Policeid;
+                if (user.Password == PWD)
                     {
                         Dashboard dashWindow = new Dashboard();
                         dashWindow.Show();

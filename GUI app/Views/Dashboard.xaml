@@ -39,11 +39,11 @@
                         <ColumnDefinition Width="4*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Image  Source="pack://application:,,,/Images/Armory.png" Width="70" Height="70" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="35 0 0 0"/>
+                    <Image  Source="pack://application:,,,/Images/police_logo.png" Width="80" Height="80" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="35 10 0 0"/>
                     <Label Grid.Column="1" HorizontalAlignment="Left" FontSize="48" FontWeight="Bold" Height="70"  FontFamily="Dungeon"  Content="Dashboard" VerticalAlignment="Center" Foreground="WhiteSmoke" />
                     <StackPanel Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="OFFICER Mr. " Foreground="white"></TextBlock>
+                            <TextBlock Text="OFFICER " Foreground="white"></TextBlock>
                             <TextBlock Name="officer" Text="xxxxxxxx" Foreground="white"></TextBlock>
                         </StackPanel>
                         <TextBlock Name="policeId" Foreground="White" Text="R8378173870198449"></TextBlock>
@@ -82,11 +82,9 @@
                     <Button Grid.Row="0" Grid.Column="3" Style="{StaticResource ImgButton}"   Background="#FFA500" Click="Button_Click_1" >
                             <Image  Source="pack://application:,,,/Images/tipline.png" Width="auto" Margin="10" />
                     </Button>
-                    <TextBlock Grid.Row="1" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Top" Text="Tip Line" Foreground="White"/>
-                   
-                    
-                   
-                    <Button Grid.Row="2" Grid.Column="1" Style="{StaticResource ImgButton}"   Background="#FFA500" Click="Button_Click_2" >
+                        <TextBlock Grid.Row="1" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Top" Text="Tip Line" Foreground="White"/>
+
+                        <Button Grid.Row="2" Grid.Column="1" Style="{StaticResource ImgButton}"   Background="#FFA500" Click="Button_Click_2" >
                             <Image  Source="pack://application:,,,/Images/prisoners.png" Width="auto" Margin="10" />
                     </Button>
                     <TextBlock Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" Text="Prisoners" Foreground="White"/>
