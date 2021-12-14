@@ -24,6 +24,7 @@ namespace GUI_app.Views
         public LogIn()
         {
             InitializeComponent();
+            
         }
         private void DragWindow(object sender, MouseButtonEventArgs e)
         {
@@ -49,10 +50,11 @@ namespace GUI_app.Views
             string NIC = nicNo.Text;
             string PWD = password.Password;
 
-            using (DatabaseRepository repository = new DatabaseRepository())
-            {
+            DatabaseRepository repository = new DatabaseRepository();
+            
                
                     Officer user = repository.Officers.Find(NIC);
+       
                 if(user != null)
                 {
                     if(user.Password == PWD)
@@ -78,19 +80,6 @@ namespace GUI_app.Views
                     nicNo.Clear();
                     password.Clear();
                 }
-                
-               
-               
-                
-                
-            
-
-            }
-
-
-           
-        }
-
-        
+            }  
     }
 }

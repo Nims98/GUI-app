@@ -61,5 +61,33 @@ namespace GUI_app.Views
             Armory armoryWin = new Armory();
             armoryWin.Show();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            ViewComplains complainsWin = new ViewComplains();
+            complainsWin.Show();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            ViewTipline TiplineWin = new ViewTipline();
+            TiplineWin.Show();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            AddPrisoner AddPrisonerWin = new AddPrisoner();
+            AddPrisonerWin.Show();
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+           PrisonerLog prisonerlogWin = new PrisonerLog();
+            prisonerlogWin.Show();
+        }
     }
 }

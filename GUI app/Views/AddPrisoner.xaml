@@ -1,11 +1,11 @@
-﻿<Window x:Class="GUI_app.Views.Profile"
+﻿<Window x:Class="GUI_app.Views.AddPrisoner"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI_app.Views"
         mc:Ignorable="d"
-          WindowStyle="None"
+        WindowStyle="None"
         MouseDown="DragWindow"
         FontSize="14"
         ResizeMode="NoResize"
@@ -18,21 +18,21 @@
         <StackPanel>
             <Grid Height="700">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="3*"/>
-                    <RowDefinition Height="6*"/>
-                    <RowDefinition Height="5*"/>
-                    <RowDefinition Height="2*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="111*"/>
+                    <RowDefinition Height="221*"/>
+                    <RowDefinition Height="113*"/>
+                    <RowDefinition Height="68*"/>
+                    <RowDefinition Height="126*"/>
+                    <RowDefinition Height="62*"/>
                 </Grid.RowDefinitions>
-                <Polygon Points="725,0 1000,0 1000,700 430,700 " Fill="#BF002B" Grid.RowSpan="9"  />
-                <local:TitleBar Grid.Row="0" ></local:TitleBar>
+                <Polygon Points="725,0 1000,0 1000,700 430,700 " Fill="#BF002B" Grid.RowSpan="6"  />
+                <local:TitleBar Grid.Row="0" Margin="0,0,0,221" Grid.RowSpan="2" ></local:TitleBar>
 
-                <StackPanel Orientation="Horizontal" Grid.Row="0">
+                <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="0,0,0,221" Grid.RowSpan="2">
                     <Image  Source="pack://application:,,,/Images/Armory.png" Width="70" Margin="20,10,20,10"/>
-                    <Label Grid.Column="1" HorizontalAlignment="Left" FontSize="48" FontWeight="Bold" Height="70"  FontFamily="Dungeon"  Content="Profiles" VerticalAlignment="Center" Foreground="WhiteSmoke" />
+                    <Label Grid.Column="1" HorizontalAlignment="Left" FontSize="48" FontWeight="Bold" Height="70"  FontFamily="Dungeon"  Content="Add Prisoner" VerticalAlignment="Center" Foreground="WhiteSmoke" />
                 </StackPanel>
-                <StackPanel Grid.Row="1" Margin="20 0 0 0">
+                <StackPanel Grid.Row="1" Margin="20,0,0,11">
                     <Grid Height="auto">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
@@ -45,28 +45,30 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Button Content="Search by NIC" Width="150" Height="30" Grid.Row="0" Grid.Column="0" Click="Button_Click_1"/>
-                        <TextBox Name="search" Grid.Column="1" Grid.Row="0" Width="300" Height="25" HorizontalAlignment="Left"></TextBox>
+                        <TextBlock Grid.Column="0" Grid.Row="0" Margin="0 10 0 10" Text="Name" Foreground="White" VerticalAlignment="Center"/>
+                        <TextBlock Grid.Column="0" Grid.Row="0" Text=":" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 20 0"/>
 
-                        <TextBlock Grid.Column="0" Grid.Row="1" Margin="0 10 0 10" Text="Name" Foreground="White" VerticalAlignment="Center"/>
-                        <TextBlock Grid.Column="0" Grid.Row="2" Margin="0 10 0 10" Text="Police ID" Foreground="White" VerticalAlignment="Center"/>
+                        <TextBox Name="name" Grid.Column="1" Grid.Row="0" Width="300" Height="25" HorizontalAlignment="Left"></TextBox>
+
+                        <TextBlock Grid.Column="0" Grid.Row="1" Margin="0 10 0 10" Text="NIC" Foreground="White" VerticalAlignment="Center"/>
+                        <TextBlock Grid.Column="0" Grid.Row="2" Margin="0 10 0 10" Text="Crime" Foreground="White" VerticalAlignment="Center"/>
                         <TextBlock Grid.Column="0" Grid.Row="1" Text=":" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 20 0"/>
                         <TextBlock Grid.Column="0" Grid.Row="2" Text=":" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 20 0"/>
-                        <TextBox Name="name" Grid.Column="1" Grid.Row="1" Width="300" Height="25" HorizontalAlignment="Left"></TextBox>
-                        <TextBox Name="policeId" Grid.Column="1" Grid.Row="2" Width="300" Height="25" HorizontalAlignment="Left"></TextBox>
+                        <TextBox Name="nic" Grid.Column="1" Grid.Row="1" Width="300" Height="25" HorizontalAlignment="Left"></TextBox>
+                        <TextBox Name="crime" Grid.Column="1" Grid.Row="2" Width="300" Height="25" HorizontalAlignment="Left"></TextBox>
                         <Border Grid.Column="2" Grid.RowSpan="4" Height="200" Width="200" Background="Transparent"></Border>
                     </Grid>
                 </StackPanel>
-                <Grid Grid.Row="2" Margin="20 0 0 0" VerticalAlignment="Top">
+                <Grid Grid.Row="2" Margin="20 0 0 0" VerticalAlignment="Top" Height="100">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="3*"/>
                     </Grid.ColumnDefinitions>
                     <TextBlock Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Margin="0 10 0 10" Text="Address" Foreground="White" VerticalAlignment="Top"/>
                     <TextBlock Grid.Column="0" Grid.Row="0" Text=":" Foreground="White" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0 0 20 0"/>
-                    <TextBox Name="address" Grid.Column="1" Grid.Row="0" Width="500" Height="150" HorizontalAlignment="Left"></TextBox>
+                    <TextBox Name="address" Grid.Column="1" Grid.Row="0" Width="500" Height="100" HorizontalAlignment="Left"></TextBox>
                 </Grid>
-                <StackPanel Grid.Row="3" Margin="20 0 0 0">
+                <StackPanel Grid.Row="3" Margin="20,11,0,0">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
@@ -84,20 +86,26 @@
                         <TextBox Name="residance" Grid.Column="2" Grid.Row="0" Width="230" Height="25" HorizontalAlignment="Left"></TextBox>
                         <TextBlock Grid.Column="1" Grid.Row="1" Text="Mobile" FontSize="12" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 5 0 0"/>
                         <TextBlock Grid.Column="2" Grid.Row="1" Text="Residance" FontSize="12" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 5 0 0"/>
+                    
+                    
+                        
                     </Grid>
                 </StackPanel>
-                <StackPanel Margin="20 0 0 0" Grid.Row="4" Orientation="Horizontal" >
-                    <TextBlock Text="Police Division" Foreground="White" HorizontalAlignment="Left" />
-                    <TextBlock Margin="134 0 0 0" Text=":" Foreground="White" HorizontalAlignment="Left" />
-                    <TextBox Name="policediv" Height="25" Width="300" Margin="20 0 0 0"></TextBox>
-                </StackPanel>
-                <Grid Grid.Row="5">
+                
+                <TextBlock Grid.Column="0" Grid.Row="4"  Margin="20 10 0 10" Text="More Info" Foreground="White" VerticalAlignment="Top"/>
+                <TextBlock  Grid.Column="0" Grid.Row="4" Text=":" Foreground="White" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="200 0 20 0"/>
+                <TextBox Name="moreinfo" Margin="260 0 0 0" Grid.Column="0" Grid.Row="4" Width="500" Height="100" HorizontalAlignment="Left"></TextBox>
+                
+                <StackPanel Margin="20,1,0,0" Grid.Row="4" Orientation="Horizontal" />
+                <Grid Grid.Row="5" Margin="0,2,0,0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Button  Grid.Column="1" Content="Back" Width="60" Height="28" Click="Button_Click"/>
+                    <Button  Grid.Column="0" Content="Back" Width="60" Height="28" Click="Button_Click_1" />
+                    <Button  Grid.Column="2" Content="Add Prisoner" Width="100" Height="28" Click="Button_Click"/>
+
                 </Grid>
             </Grid>
         </StackPanel>

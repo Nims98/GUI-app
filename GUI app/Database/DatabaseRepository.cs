@@ -14,5 +14,6 @@ namespace GUI_app.Database
         public DbSet<FireArm> FireArms { get; set; }
         public DbSet<ComplainFile> ComplainFiles { get; set; }
         public DbSet<TipModel> TipModels { get; set; }
+        public DbSet<Prisoner> Prisoners { get; set; }
     }
 }

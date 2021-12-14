@@ -17,11 +17,11 @@ using System.Windows.Shapes;
 namespace GUI_app.Views
 {
     /// <summary>
-    /// Interaction logic for Profile.xaml
+    /// Interaction logic for AddPrisoner.xaml
     /// </summary>
-    public partial class Profile : Window
+    public partial class AddPrisoner : Window
     {
-        public Profile()
+        public AddPrisoner()
         {
             InitializeComponent();
         }
@@ -35,28 +35,28 @@ namespace GUI_app.Views
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
-            Dashboard dashwin = new Dashboard();
-            dashwin.Show();
+            using (DatabaseRepository repository = new DatabaseRepository())
+            {
+                Prisoner newprisoner = new Prisoner()
+                {
+                    Name = name.Text,
+                    Address = address.Text,
+                    NIC = nic.Text,
+                    HomePhone=int.Parse(residance.Text),
+                    Mobile = int.Parse(mobile.Text),
+                    Crime = crime.Text,
+                    MoreInfo=moreinfo.Text
+                };
+                repository.Prisoners.Add(newprisoner);
+                repository.SaveChanges();
+            }
         }
-
-     
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            string nic = search.Text;
-
-            using (DatabaseRepository repository = new DatabaseRepository())
-            {
-                Officer searchResult = repository.Officers.Find(nic);
-
-                name.Text = searchResult.Name;
-                policeId.Text = searchResult.Policeid;
-                address.Text = searchResult.Address;
-                mobile.Text = searchResult.Mobile.ToString();
-                residance.Text = searchResult.HomePhone.ToString();
-                policediv.Text = searchResult.PoliceDivision;
-            }
+            this.Close();
+            Dashboard dashWindow = new Dashboard();
+            dashWindow.Show();
         }
     }
 }

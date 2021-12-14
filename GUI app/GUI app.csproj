@@ -11,11 +11,16 @@
     <None Remove="Images\anonymous.png" />
     <None Remove="Images\armory.png" />
     <None Remove="Images\close.png" />
+    <None Remove="Images\complains.png" />
     <None Remove="Images\minimize.png" />
     <None Remove="Images\notepad.png" />
     <None Remove="Images\police.png" />
     <None Remove="Images\police_logo.png" />
+    <None Remove="Images\prisonerLog.png" />
+    <None Remove="Images\prisoners.png" />
     <None Remove="Images\profile.png" />
+    <None Remove="Images\profile2.png" />
+    <None Remove="Images\tipline.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -32,6 +37,9 @@
     <Resource Include="Images\close.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Images\complains.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Images\minimize.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
@@ -44,7 +52,19 @@
     <Resource Include="Images\police_logo.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Images\prisonerLog.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\prisoners.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Images\profile.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\profile2.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\tipline.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
