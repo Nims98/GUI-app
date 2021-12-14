@@ -40,26 +40,52 @@ namespace GUI_app.Views
             Dashboard dashwin = new Dashboard();
             dashwin.Show();
         }
-
-        private void Update_Btn(object sender, RoutedEventArgs e)
-        {
-            using (DatabaseRepository repository = new DatabaseRepository())
+        
+       private void Update_Btn(object sender, RoutedEventArgs e)
             {
+             string search = SerialNo.Text;
 
-                FireArm gun = new FireArm()
+             using (DatabaseRepository repository = new DatabaseRepository())
+            {
+                   string pid = LogIn.currentUserPoliceID;
+                   string name = LogIn.currentUserName;
+                   FireArm gun = repository.FireArms.Find(search);
                 {
-                    SerialNo = SerialNo.Text,
-                    Model = Model.Text,
-                   LastUsed=Lastused.DisplayDate,
-                   LastServiced=Lastserviced.DisplayDate,
-                    NewBullets = int.Parse(Newbullets.Text),
-                    FiredBullets = int.Parse(Firedbullets.Text),
-                    BalanceBullets = int.Parse(Balancebullets.Text),
-                    Notes = notes.Text
+                    gun.LastUsed = (DateTime)Lastused.SelectedDate;
+                    gun.LastServiced =(DateTime) Lastserviced.SelectedDate;
+                    gun.NewBullets = int.Parse(Newbullets.Text);
+                    gun.FiredBullets = int.Parse(Firedbullets.Text);
+                    gun.BalanceBullets = int.Parse(Balancebullets.Text);
+                    gun.Notes = notes.Text;
+                    gun.LastUpdatedByid = pid;
+                    gun.LastUpdatedByname = name;
                 };
-                repository.FireArms.Add(gun);
+                
                 repository.SaveChanges();
             }
             }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            string search = SerialNo.Text;
+
+            using (DatabaseRepository repository = new DatabaseRepository())
+            {
+                string nic = LogIn.currentUserID;
+                FireArm gun = repository.FireArms.Find(search);
+                {
+                    Model.Text = gun.Model;
+                    Lastused.SelectedDate = gun.LastUsed;
+                    Lastserviced.SelectedDate = gun.LastServiced;
+                    Newbullets.Text = gun.NewBullets.ToString();
+                    Firedbullets.Text = gun.FiredBullets.ToString();
+                    Balancebullets.Text = gun.BalanceBullets.ToString();
+                    notes.Text = gun.Notes;
+                    pID.Text = gun.LastUpdatedByid;
+                    name.Text = gun.LastUpdatedByname;
+
+                }
+            }
+        }
     }
 }

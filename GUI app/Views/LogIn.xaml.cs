@@ -26,6 +26,9 @@ namespace GUI_app.Views
             InitializeComponent();
             
         }
+        public static string currentUserID = null;
+        public static string currentUserName = null;
+        public static string currentUserPoliceID = null;
         private void DragWindow(object sender, MouseButtonEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed)
@@ -53,14 +56,17 @@ namespace GUI_app.Views
             DatabaseRepository repository = new DatabaseRepository();
             
                
-                    Officer user = repository.Officers.Find(NIC);
-       
-                if(user != null)
+                   Officer user = repository.Officers.Find(NIC);
+            currentUserID = user.NIC;
+            currentUserName = user.Name;
+            currentUserPoliceID = user.Policeid;
+            if (user != null)
                 {
                     if(user.Password == PWD)
                     {
                         Dashboard dashWindow = new Dashboard();
                         dashWindow.Show();
+                    
                         this.Close();
                     }
                     else

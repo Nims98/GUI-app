@@ -11,10 +11,13 @@
         ResizeMode="NoResize"
         Background="Transparent"
         MouseDown="DragWindow"
+        AllowsTransparency="True"
         Title="E - Police" Height="700" Width="1000">
     
         <Border Background="#151720" CornerRadius="10">
-       
+        <Border.Clip>
+            <RectangleGeometry RadiusX="8" RadiusY="8" Rect="0,0,1000,700"/>
+        </Border.Clip>
         <StackPanel>
             <Grid Height="700">
                 <Grid.RowDefinitions>
@@ -41,9 +44,9 @@
                     <StackPanel Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="OFFICER Mr. " Foreground="white"></TextBlock>
-                            <TextBlock Text="xxxxxxxx" Foreground="white"></TextBlock>
+                            <TextBlock Name="officer" Text="xxxxxxxx" Foreground="white"></TextBlock>
                         </StackPanel>
-                        <TextBlock Foreground="White" Text="R8378173870198449"></TextBlock>
+                        <TextBlock Name="policeId" Foreground="White" Text="R8378173870198449"></TextBlock>
                     </StackPanel>
                     <Image Grid.Column="3" Source="pack://application:,,,/Images/Profile.png" Width="60"   VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20,10,20,10"/>
                 </Grid>
@@ -94,7 +97,7 @@
                     <TextBlock Grid.Row="3" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Top" Text="Prisoner Log" Foreground="White"/>
                       
                 </Grid>
-                <Button Grid.Row="3" Height="31" Width="113" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0 0 15 25" Content="Log Out"/>
+                <Button Grid.Row="3" Height="31" Width="113" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0 0 15 25" Content="Log Out" Click="Button_Click_4"/>
             </Grid>
             </Grid>
         </StackPanel>

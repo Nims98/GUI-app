@@ -11,8 +11,9 @@
         ResizeMode="NoResize"
         Background="Transparent"
         Title="E - Police" Height="700" Width="1000">
-    
-    <Grid>
+
+
+    <Grid Background="#151720">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="3*"/>
@@ -58,4 +59,5 @@
         <Button Grid.Row="2" Width="80" Height="30" Content="Close" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="20" Click="Button_Click"/>
     </Grid>
    
+ 
 </Window>

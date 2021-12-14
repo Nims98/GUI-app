@@ -21,5 +21,7 @@ namespace GUI_app.Models
         public int FiredBullets { get; set; }
         public int BalanceBullets { get; set; }
         public string Notes { get; set; }
+        public string LastUpdatedByid { get; set; }
+        public string LastUpdatedByname { get; set; }
     }
 }

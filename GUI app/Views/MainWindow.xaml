@@ -15,7 +15,9 @@
 
         Title="E - Police" Height="700" Width="1000">
     <Border Background="#151720" CornerRadius="10">
-
+        <Border.Clip>
+            <RectangleGeometry RadiusX="8" RadiusY="8" Rect="0,0,1000,700"/>
+        </Border.Clip>
         <StackPanel>
 
             <Grid Height="700" Width="1000">

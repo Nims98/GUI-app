@@ -24,6 +24,7 @@ namespace GUI_app.Views
         public Profile()
         {
             InitializeComponent();
+            retrieveProfile();
         }
         private void DragWindow(object sender, MouseButtonEventArgs e)
         {
@@ -40,23 +41,42 @@ namespace GUI_app.Views
             dashwin.Show();
         }
 
-     
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+     public void retrieveProfile()
         {
-            string nic = search.Text;
-
+            string nic = LogIn.currentUserID;
             using (DatabaseRepository repository = new DatabaseRepository())
             {
-                Officer searchResult = repository.Officers.Find(nic);
+                Officer profile = repository.Officers.Find(nic);
 
-                name.Text = searchResult.Name;
-                policeId.Text = searchResult.Policeid;
-                address.Text = searchResult.Address;
-                mobile.Text = searchResult.Mobile.ToString();
-                residance.Text = searchResult.HomePhone.ToString();
-                policediv.Text = searchResult.PoliceDivision;
+                name.Text = profile.Name;
+                nicNo.Text = nic;
+                policeId.Text = profile.Policeid;
+                address.Text = profile.Address;
+                mobile.Text = profile.Mobile.ToString();
+                residance.Text = profile.HomePhone.ToString();
+                policediv.Text = profile.PoliceDivision;
             }
+        }
+
+
+        private void UpdateBtn(object sender, RoutedEventArgs e)
+        {
+            string nic = LogIn.currentUserID;
+            using (DatabaseRepository repository = new DatabaseRepository())
+            {
+                Officer profile = repository.Officers.Find(nic);
+
+                profile.Address = address.Text;
+                profile.Mobile =int.Parse(mobile.Text);
+                profile.HomePhone =int.Parse(residance.Text);
+
+            repository.SaveChanges();
+            }
+            CustomMsgBox msgBx = new CustomMsgBox();
+            msgBx.Message.Text = "User details Updated !";
+            msgBx.Show();
+            
+           
         }
     }
 }

@@ -24,6 +24,8 @@ namespace GUI_app.Views
         public Dashboard()
         {
             InitializeComponent();
+            officer.Text = LogIn.currentUserName;
+            policeId.Text = LogIn.currentUserPoliceID;
             using (DatabaseRepository repository = new DatabaseRepository())
             {
                 Officer off1 = new Officer()
@@ -88,6 +90,13 @@ namespace GUI_app.Views
             this.Hide();
            PrisonerLog prisonerlogWin = new PrisonerLog();
             prisonerlogWin.Show();
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            MainWindow mainwin = new MainWindow();
+            mainwin.Show();
         }
     }
 }
